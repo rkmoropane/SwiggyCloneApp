@@ -7,77 +7,16 @@ app.listen(3000, () => {
     console.log('Server is running on port 3000');
 });
 
+const object = {id: 1, name: 'Kholofelo', age: 25};
 
-function is_MathByX_Available() {
-    return false;
-};
+const object2 = { ...object, email: "rkmoropane@gmail.com", age: 30, name: "Kholofelo Moropane", id: 4};
+const object3 = { ...object, ...object2, phone: "+27676736472", id: 5};
 
-function is_MathByY_Available() {
-    return false;
-};
+console.log(object3);
 
-function is_ScByX_Available() {
-    return false;
-};
+const array1 = [1, 2, 4];
+const array2 = [1, 2, 4];
 
-function is_ScByY_Available() {
-    return false;
-};
+const array3 = [...array1, ...array2];
 
-function resultMathBook(): Promise<string> {
-    return new Promise((resolve, reject) => {
-        if (is_MathByX_Available()){
-            resolve("Maths by X available");
-        } else if (is_MathByY_Available()){
-            resolve("Maths by Y available");
-        } else {
-            reject("Both books not available");
-        }
-    });
-}
-
-function resultScienceBook(): Promise<string> {
-    return new Promise((resolve, reject) => {
-        if (is_ScByX_Available()){
-            resolve('Science by X is available');
-        } else if (is_ScByY_Available()){
-            resolve('Science by Y is available');
-        } else {
-            reject("Both Science books not available");
-        }
-    });
-}
-
-// Proper way to use then and catch with the result function
-resultMathBook().then((result) => {
-    console.log('data:', result);
-    if(result) {
-        resultScienceBook().then((result) => {
-            console.log("data:", result);
-        }).catch((error) => {
-            console.log("Error:", error);
-        });
-    }
-}).catch((error) => {
-    console.log("Error:", error);
-});
-
-// Use the try and catch in the final to avoid using then and catch with the result function because it will return a promise and not a string value
-async function final() {
-    try {
-        let result1 = await resultMathBook(); // pass the await to get the string value
-        if (result1){
-            console.log('data:', result1)
-            result1 = await resultScienceBook();
-        }
-        return result1;
-    } catch(e) {
-        return Promise.reject(e);
-    }    
-};
-// Not a proper way to use then and catch with the final function because it will return a promise and not a string value
-final().then(data => {
-    console.log("data:", data);
-}).catch(e => {
-    console.log("Error:", e);
-});
+console.log(array3);
