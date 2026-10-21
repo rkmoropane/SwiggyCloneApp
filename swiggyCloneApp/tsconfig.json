@@ -1,0 +1,29 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",                /* Target modern Node.js features */
+    "module": "CommonJS",              /* Standard for reliable ts-node + nodemon execution */
+    "esModuleInterop": true,
+    "lib": ["ES2022"],                 /* Type definitions for modern JS syntax */
+    "rootDir": "./src",                /* Your TypeScript files go here */
+    "outDir": "./dist",                /* Compiled production JavaScript goes here */
+    
+    /* Strict Type-Checking Options */
+    "strict": true,                    /* Enable all strict type-checking options */
+    "noImplicitAny": true,             /* Raise error on expressions and declarations with an implied 'any' type */
+
+    /* Additional Settings */
+    "esModuleInterop": true,           /* Crucial for importing Express cleanly */
+    "forceConsistentCasingInFileNames": true, /* Prevents Windows/Mac cross-platform file bugs */
+    "skipLibCheck": true    
+  },
+  "files": [
+    "./node_modules/@types/node/index.d.ts"
+  ],
+  "include": [
+    "src/**/*.ts",
+    "package.json"
+    ],
+  "exclude": [
+    "node_modules"
+  ]
+}
