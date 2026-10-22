@@ -277,7 +277,39 @@ Server is running on port 3000
 ### 10. Promise, async await, and try catch
 - Promise: 
  > Represents a result that may be available now, later, or never if the operation fails.
+- async wait:
+ >
+
+- try & catch:
+ > 
+
+
+### 11. Understanding Routing Basics:
+- There are different ways to route your app,
+ > get `app.get()` :
+ ```
+ // when you have only one user
+ app.get('/api/login', (req, res) => {
+    console.log(req);
+    res.status(200).send('Success');
+  });
+
+// when you have different users: customers, admin, super-admin, and etc
+ app.get('/api/getData/', (req, res) => {
+    console.log(req);
+    res.status(200).send('Success');
+  });
+
+
+ ```
+ > post `app.post()` 
+ > put `app.put()` 
+ > patch `app.patch()` 
+ > delete `app.delete()` 
+
 --- 
+
+
 
 
 ---

@@ -7,16 +7,32 @@ app.listen(3000, () => {
     console.log('Server is running on port 3000');
 });
 
-const object = {id: 1, name: 'Kholofelo', age: 25};
 
-const object2 = { ...object, email: "rkmoropane@gmail.com", age: 30, name: "Kholofelo Moropane", id: 4};
-const object3 = { ...object, ...object2, phone: "+27676736472", id: 5};
+// app.get('/api/user/login', (req, res) => {
+//     // console.log(req);
 
-console.log(object3);
+//     const data = {name: "Kholofelo", email: "rkmoropane@gmail.com"}
+//     res.status(200).send(data);
+// });
 
-const array1 = [1, 2, 4];
-const array2 = [1, 2, 4];
+// app.get('/api/user/login', (req, res) => {
+//     // console.log(req);
 
-const array3 = [...array1, ...array2];
+//     const data = {name: "Kholofelo", email: "rkmoropane@gmail.com"}
+//     res.json(data).status(200);
+// });
 
-console.log(array3);
+app.get('/api/user/login', (req, res) => {
+    // Get the Query Params keys and values
+    console.log("Query Params", req.query);
+    // Get the email value from Query Params
+    console.log("Email", req.query.email);
+
+    // send the response
+    res.status(200).send("Success");
+});
+
+app.get('/api/user/test', (req, res) => {
+    // console.log(req);
+    res.status(200).send("Test API is working");
+});
